@@ -1,4 +1,2 @@
 config:
-  github:owner: UnstoppableMango
-  github:token:
-    secure: AAABANDOE+jBi+euTmlVD/MK1nDiWjFBswVmcV52gApxJ/U6o4oP2D3S3TdYw2l7RTFynOZUaC00z70EEQSZe4yodPSxnPl9
+  github:owner: unmango

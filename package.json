@@ -1,5 +1,5 @@
 {
-	"name": "github",
+	"name": "unmango-github",
 	"license": "MIT",
 	"packageManager": "yarn@1.22.22",
 	"main": "index.ts",

@@ -11,7 +11,6 @@ diff: install stack
 up: install stack
 	pulumi up
 
-
 lint: install
 	yarn eslint .
 

@@ -1,9 +1,9 @@
-name: github
+name: unmango-github
 runtime:
   name: nodejs
   options:
     packagemanager: yarn
-description: My GitHub infrastructure
+description: github.com/unmango IaC
 config:
   pulumi:tags:
     value:
