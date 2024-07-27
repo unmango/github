@@ -1,3 +1,3 @@
 # github
 
-The parts of my GitHub I manage with IaC
+The parts of GitHub we manage with IaC
