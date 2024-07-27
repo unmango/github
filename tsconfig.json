@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"outDir": "bin",
+		"target": "es2020",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"experimentalDecorators": true,
+		"pretty": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"files": [
+		"components/index.ts",
+		"components/privateRepo.ts",
+		"components/publicRepo.ts",
+		"components/repo.ts",
+		"index.ts"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"name": "unmango-github",
+	"license": "MIT",
+	"packageManager": "yarn@1.22.22",
+	"main": "index.ts",
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"dependencies": {
+		"@pulumi/github": "^6.2.2",
+		"@pulumi/pulumi": "^3.113.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.6.0",
+		"@types/eslint__js": "^8.42.3",
+		"@types/node": "^20.0.0",
+		"eslint": "^9.6.0",
+		"typescript": "^5.5.2",
+		"typescript-eslint": "^7.14.1"
+	}
+}
