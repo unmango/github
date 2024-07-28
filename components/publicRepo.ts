@@ -4,11 +4,16 @@ import {
 	RepositoryRulesetRulesRequiredStatusChecks,
 	RepositoryTemplate,
 } from '@pulumi/github/types/input';
-import { ComponentResourceOptions, Input } from '@pulumi/pulumi';
+import { ComponentResourceOptions, Input, output } from '@pulumi/pulumi';
 import { Repo } from './repo';
+
+const integrationIds = {
+	github: 15368,
+};
 
 export interface PublicRepoArgs {
 	description: Input<string>;
+	githubChecks?: Input<Input<string>[]>;
 	requiredChecks?: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'];
 	template?: RepositoryTemplate;
 }
@@ -37,6 +42,9 @@ export class PublicRepo extends Repo {
 		);
 
 		const repo = this.repo;
+		const statusChecks = args.githubChecks
+			? getGitHubStatusChecks(args.githubChecks)
+			: getRequiredStatusChecks(args.requiredChecks);
 
 		const mainRuleset = new gh.RepositoryRuleset(
 			name,
@@ -60,7 +68,7 @@ export class PublicRepo extends Repo {
 					nonFastForward: true,
 					requiredLinearHistory: true,
 					requiredSignatures: true,
-					requiredStatusChecks: getRequiredStatusChecks(args.requiredChecks),
+					requiredStatusChecks: statusChecks,
 				},
 			},
 			{ parent: this },
@@ -73,6 +81,18 @@ export class PublicRepo extends Repo {
 			mainRuleset,
 		});
 	}
+}
+
+function getGitHubStatusChecks(
+	checks: PublicRepoArgs['githubChecks'],
+): RepositoryRulesetRules['requiredStatusChecks'] {
+	if (!checks) return
+	return getRequiredStatusChecks(output(checks).apply(c => {
+		return c.map(x => ({
+			integrationId: integrationIds.github,
+			context: x,
+		}));
+	}));
 }
 
 function getRequiredStatusChecks(
