@@ -86,13 +86,15 @@ export class PublicRepo extends Repo {
 function getGitHubStatusChecks(
 	checks: PublicRepoArgs['githubChecks'],
 ): RepositoryRulesetRules['requiredStatusChecks'] {
-	if (!checks) return
-	return getRequiredStatusChecks(output(checks).apply(c => {
-		return c.map(x => ({
-			integrationId: integrationIds.github,
-			context: x,
-		}));
-	}));
+	if (!checks) return;
+	return getRequiredStatusChecks(
+		output(checks).apply(c => {
+			return c.map(x => ({
+				integrationId: integrationIds.github,
+				context: x,
+			}));
+		}),
+	);
 }
 
 function getRequiredStatusChecks(
