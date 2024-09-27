@@ -47,7 +47,7 @@ jobs:
           requested-token-type: urn:pulumi:token-type:access_token:personal
           scope: user:UnstoppableMango
 
-      - uses: pulumi/actions@v5
+      - uses: pulumi/actions@v6
         with:
           command: ${{ github.event_name == 'pull_request' && 'preview' || 'up' }}
           stack-name: UnstoppableMango/unmango-github/prod
