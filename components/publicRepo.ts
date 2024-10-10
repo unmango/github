@@ -89,10 +89,12 @@ function getGitHubStatusChecks(
 	if (!checks) return;
 
 	return getRequiredStatusChecks(
-		output(checks).apply(c => c.map(x => ({
-			integrationId: integrationIds.github,
-			context: x,
-		}))),
+		output(checks).apply(c =>
+			c.map(x => ({
+				integrationId: integrationIds.github,
+				context: x,
+			}))
+		),
 	);
 }
 
