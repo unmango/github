@@ -8,7 +8,7 @@ const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 
 const go = new PublicRepo('go', {
 	description: 'Monorepo for go modules',
-	githubChecks: ['CI'],
+	githubChecks: ['Build and Test'],
 });
 
 export const repos = [

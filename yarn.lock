@@ -471,17 +471,17 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@pulumi/github@^6.2.2":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-6.3.1.tgz#5598b4694b7938e127cd9608abae1353831428e9"
-  integrity sha512-TI0Ts4pP70DBSadeRQ71+7JLm0lTRrE6qcHgM3L+SOhzL+C231HHe9mLf/ubM57mbTTc0hAoGy1hNjIc2gbmFw==
+"@pulumi/github@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-6.4.0.tgz#192a1e526568afa21c51adc407f33e8b86219525"
+  integrity sha512-4JP+i3Rkr+GhxY7of6iEG6lN1p2UW/Te4wCbMwN3ln/+A2kArHjI+zYoFLjQMUWWq3ACE8srakOo1rwfEmVclQ==
   dependencies:
-    "@pulumi/pulumi" "^3.42.0"
+    "@pulumi/pulumi" "^3.136.0"
 
-"@pulumi/pulumi@^3.113.0", "@pulumi/pulumi@^3.42.0":
-  version "3.136.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.136.1.tgz#1ef187cdb3f3b4abf119ae6088e76edb20947ed4"
-  integrity sha512-bO+AVYKyf4dFDVSbBRoCiwAVE0JhugwAEv5FmWit+VHE3f9eoy1qrw7t5DmGmAiL2cGCwTpvVEIf4y1N7360ZA==
+"@pulumi/pulumi@^3.136.0", "@pulumi/pulumi@^3.141.0":
+  version "3.141.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.141.0.tgz#18c93a18732d09021e34eda4b989a87ca3e070e6"
+  integrity sha512-gJejbOsLMg1KKmzK/yJIzU3gUT7fy42jrsSeR9aRyjteqgtT8vvhV7YKozGrkoumfu2L02SHCnPnAvpf5Rp7UQ==
   dependencies:
     "@grpc/grpc-js" "^1.10.1"
     "@logdna/tail-file" "^2.0.6"
@@ -654,12 +654,12 @@
   dependencies:
     undici-types "~6.19.2"
 
-"@types/node@^20.0.0":
-  version "20.16.11"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.16.11.tgz#9b544c3e716b1577ac12e70f9145193f32750b33"
-  integrity sha512-y+cTCACu92FyA5fgQSAI8A1H429g7aSK2HsO7K4XYUWc4dY5IUz55JSDIYT6/VsOLfGy8vmvQYC2hfb0iF16Uw==
+"@types/node@^22.9.3":
+  version "22.9.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.9.3.tgz#08f3d64b3bc6d74b162d36f60213e8a6704ef2b4"
+  integrity sha512-F3u1fs/fce3FFk+DAxbxc78DF8x0cY09RRL8GnXLmkJ1jvx3TtPdWoTT5/NiYfI5ASqXBmfqJi9dZ3gxMx4lzw==
   dependencies:
-    undici-types "~6.19.2"
+    undici-types "~6.19.8"
 
 "@types/responselike@^1.0.0":
   version "1.0.3"
@@ -2520,7 +2520,7 @@ typescript@^5.5.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.3.tgz#5f3449e31c9d94febb17de03cc081dd56d81db5b"
   integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
 
-undici-types@~6.19.2:
+undici-types@~6.19.2, undici-types@~6.19.8:
   version "6.19.8"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
   integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
