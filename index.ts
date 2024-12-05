@@ -11,6 +11,11 @@ const go = new PublicRepo('go', {
 	githubChecks: ['Build and Test'],
 });
 
+const thecluster = new PublicRepo('thecluster', {
+	description: 'DevOps tooling for managing a Kubernetes cluster with Pulumi micro-stacks',
+	githubChecks: ['Build and Test'],
+});
+
 export const repos = [
 	pulumiBaremetal.repo.name,
 	go.repo.name,
