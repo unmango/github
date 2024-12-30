@@ -16,7 +16,14 @@ const thecluster = new PublicRepo('thecluster', {
 	githubChecks: ['Build and Test'],
 });
 
+const theclusterOperator = new PublicRepo('thecluster-operator', {
+	description: 'Smörgåsbord of things a person might want running in their Kubernetes cluster',
+	githubChecks: ['Build and Test'],
+});
+
 export const repos = [
 	pulumiBaremetal.repo.name,
 	go.repo.name,
+	thecluster.repo.name,
+	theclusterOperator.repo.name,
 ];
