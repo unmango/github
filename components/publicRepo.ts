@@ -36,6 +36,7 @@ export class PublicRepo extends Repo {
 					visibility: 'public',
 					allowAutoMerge: true,
 					template: args.template,
+					vulnerabilityAlerts: true,
 				},
 			},
 			opts,
