@@ -1,14 +1,19 @@
 import { PublicRepo } from './components';
 
-const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
-	description: 'Pulumi bare-metal provisioning provider',
-	template: { owner: 'pulumi', repository: 'pulumi-provider-boilerplate' },
-	githubChecks: ['Provisioner', 'Provider', 'Tests'],
+const devctl = new PublicRepo('devctl', {
+	description: 'Dev productivity CLI',
+	githubChecks: ['Build and Test'],
 });
 
 const go = new PublicRepo('go', {
 	description: 'Random Go crap',
 	githubChecks: ['Build and Test'],
+});
+
+const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
+	description: 'Pulumi bare-metal provisioning provider',
+	template: { owner: 'pulumi', repository: 'pulumi-provider-boilerplate' },
+	githubChecks: ['Provisioner', 'Provider', 'Tests'],
 });
 
 const thecluster = new PublicRepo('thecluster', {
@@ -22,8 +27,9 @@ const theclusterOperator = new PublicRepo('thecluster-operator', {
 });
 
 export const repos = [
-	pulumiBaremetal.repo.name,
+	devctl.repo.name,
 	go.repo.name,
+	pulumiBaremetal.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
 ];
