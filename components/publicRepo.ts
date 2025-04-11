@@ -14,7 +14,6 @@ const integrationIds = {
 export interface PublicRepoArgs {
 	description: Input<string>;
 	githubChecks?: Input<Input<string>[]>;
-	requiredChecks?: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'];
 	template?: RepositoryTemplate;
 }
 
@@ -43,9 +42,6 @@ export class PublicRepo extends Repo {
 		);
 
 		const repo = this.repo;
-		const statusChecks = args.githubChecks
-			? getGitHubStatusChecks(args.githubChecks)
-			: getRequiredStatusChecks(args.requiredChecks);
 
 		const mainRuleset = new gh.RepositoryRuleset(
 			name,
@@ -69,7 +65,7 @@ export class PublicRepo extends Repo {
 					nonFastForward: true,
 					requiredLinearHistory: true,
 					requiredSignatures: true,
-					requiredStatusChecks: statusChecks,
+					requiredStatusChecks: getGitHubStatusChecks(args.githubChecks),
 				},
 			},
 			{ parent: this },
@@ -100,7 +96,7 @@ function getGitHubStatusChecks(
 }
 
 function getRequiredStatusChecks(
-	checks: PublicRepoArgs['requiredChecks'],
+	checks: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'] | undefined,
 ): RepositoryRulesetRules['requiredStatusChecks'] {
 	if (!checks) return;
 
