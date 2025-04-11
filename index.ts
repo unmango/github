@@ -20,6 +20,11 @@ const goMake = new PublicRepo('go-make', {
 	githubChecks: ['Build and Test'],
 });
 
+const goPrivateInternetAccess = new PublicRepo('go-pia', {
+	description: 'Private Internet Access client and utilities in Go',
+	githubChecks: ['Build and Test'],
+});
+
 const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 	description: 'Pulumi bare-metal provisioning provider',
 	template: { owner: 'pulumi', repository: 'pulumi-provider-boilerplate' },
