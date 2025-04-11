@@ -38,7 +38,7 @@ const thecluster = new PublicRepo('thecluster', {
 
 const theclusterOperator = new PublicRepo('thecluster-operator', {
 	description: 'Smörgåsbord of things a person might want running in their Kubernetes cluster',
-	githubChecks: ['Build and Test'],
+	githubChecks: ['Build and Test', 'Lint', 'Docker'],
 });
 
 export const repos = [
