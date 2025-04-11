@@ -7,12 +7,11 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@pulumi/github": "^6.4.0",
-		"@pulumi/pulumi": "^3.141.0"
+		"@pulumi/github": "^6.7.0",
+		"@pulumi/pulumi": "^3.162.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.6.0",
-		"@types/eslint__js": "^8.42.3",
 		"@types/node": "^22.9.3",
 		"eslint": "^9.6.0",
 		"typescript": "^5.5.2",
