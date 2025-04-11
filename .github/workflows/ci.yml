@@ -16,6 +16,9 @@ jobs:
     concurrency:
       group: ${{ github.ref }}
       cancel-in-progress: true
+    env:
+      # renovate: datasource=github-releases depName=dprint/dprint
+      DPRINT_VERSION: 0.46.3
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,7 +37,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: dprint/check@v2.2
         with:
-          dprint-version: 0.46.3
+          dprint-version: ${{ env.DPRINT_VERSION }}
 
       - name: Lint
         if: github.event_name == 'pull_request'
