@@ -5,6 +5,10 @@ const aferox = new PublicRepo('aferox', {
 	githubChecks: ['Build and Test'],
 });
 
+const cloudflareOperator = new PublicRepo('cloudflare-operator', {
+	description: 'Manage Cloudflare infrastructure in Kubernetes',
+});
+
 const devctl = new PublicRepo('devctl', {
 	description: 'Dev productivity CLI',
 	githubChecks: ['Build and Test'],
@@ -43,9 +47,11 @@ const theclusterOperator = new PublicRepo('thecluster-operator', {
 
 export const repos = [
 	aferox.repo.name,
+	cloudflareOperator.repo.name,
 	devctl.repo.name,
 	go.repo.name,
 	goMake.repo.name,
+	goPrivateInternetAccess.repo.name,
 	pulumiBaremetal.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
