@@ -7,6 +7,7 @@ const aferox = new PublicRepo('aferox', {
 
 const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 	description: 'Manage Cloudflare infrastructure in Kubernetes',
+	githubChecks: ['Run on Ubuntu'], // TODO: I kinda hate this
 });
 
 const devctl = new PublicRepo('devctl', {
