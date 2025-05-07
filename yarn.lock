@@ -514,41 +514,7 @@
   dependencies:
     "@pulumi/pulumi" "^3.142.0"
 
-"@pulumi/pulumi@^3.142.0":
-  version "3.167.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.167.0.tgz#569b481194b731006173e9b605b3a09e07d87698"
-  integrity sha512-nqqG9ya86CO8eRpPSL34K0NWhQbH2hXAlVo+lCvi7I51nKFqaJITvfgfVEqwKU0g3KJspK8ZG0/1OZBRe0Dogg==
-  dependencies:
-    "@grpc/grpc-js" "^1.10.1"
-    "@logdna/tail-file" "^2.0.6"
-    "@npmcli/arborist" "^7.3.1"
-    "@opentelemetry/api" "^1.9"
-    "@opentelemetry/exporter-zipkin" "^1.28"
-    "@opentelemetry/instrumentation" "^0.55"
-    "@opentelemetry/instrumentation-grpc" "^0.55"
-    "@opentelemetry/resources" "^1.28"
-    "@opentelemetry/sdk-trace-base" "^1.28"
-    "@opentelemetry/sdk-trace-node" "^1.28"
-    "@types/google-protobuf" "^3.15.5"
-    "@types/semver" "^7.5.6"
-    "@types/tmp" "^0.2.6"
-    execa "^5.1.0"
-    fdir "^6.1.1"
-    google-protobuf "^3.5.0"
-    got "^11.8.6"
-    ini "^2.0.0"
-    js-yaml "^3.14.0"
-    minimist "^1.2.6"
-    normalize-package-data "^6.0.0"
-    picomatch "^3.0.1"
-    pkg-dir "^7.0.0"
-    require-from-string "^2.0.1"
-    semver "^7.5.2"
-    source-map-support "^0.5.6"
-    tmp "^0.2.1"
-    upath "^1.1.0"
-
-"@pulumi/pulumi@^3.162.0":
+"@pulumi/pulumi@^3.142.0", "@pulumi/pulumi@^3.162.0":
   version "3.167.0"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.167.0.tgz#569b481194b731006173e9b605b3a09e07d87698"
   integrity sha512-nqqG9ya86CO8eRpPSL34K0NWhQbH2hXAlVo+lCvi7I51nKFqaJITvfgfVEqwKU0g3KJspK8ZG0/1OZBRe0Dogg==
@@ -698,9 +664,9 @@
     undici-types "~6.21.0"
 
 "@types/node@^22.9.3":
-  version "22.15.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.2.tgz#1db55aa64618ee93a58c8912f74beefe44aca905"
-  integrity sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A==
+  version "22.15.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.15.tgz#8877c05c18e552e738438e477d7ba22c5d73a57c"
+  integrity sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==
   dependencies:
     undici-types "~6.21.0"
 
