@@ -15,6 +15,11 @@ const devctl = new PublicRepo('devctl', {
 	githubChecks: ['Build and Test'],
 });
 
+const game = new PublicRepo('game', {
+	description: 'A gaming framework',
+	githubChecks: ['Build and Test'],
+});
+
 const go = new PublicRepo('go', {
 	description: 'Random Go crap',
 	githubChecks: ['Build and Test'],
@@ -50,6 +55,7 @@ export const repos = [
 	aferox.repo.name,
 	cloudflareOperator.repo.name,
 	devctl.repo.name,
+	game.repo.name,
 	go.repo.name,
 	goMake.repo.name,
 	goPrivateInternetAccess.repo.name,
