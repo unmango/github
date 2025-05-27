@@ -35,6 +35,11 @@ const goPrivateInternetAccess = new PublicRepo('go-pia', {
 	githubChecks: ['Build and Test'],
 });
 
+const kubebuilder = new PublicRepo('kubebuilder', {
+	description: 'Collection of kubebuilder plugins',
+	githubChecks: ['build', 'lint', 'clean'],
+});
+
 const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 	description: 'Pulumi bare-metal provisioning provider',
 	template: { owner: 'pulumi', repository: 'pulumi-provider-boilerplate' },
@@ -59,6 +64,7 @@ export const repos = [
 	go.repo.name,
 	goMake.repo.name,
 	goPrivateInternetAccess.repo.name,
+	kubebuilder.repo.name,
 	pulumiBaremetal.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
