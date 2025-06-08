@@ -1,7 +1,6 @@
 _ := $(shell mkdir -p .make)
-WORKING_DIR := $(shell pwd)
 
-PULUMI := ${WORKING_DIR}/bin/pulumi
+PULUMI := ${CURDIR}/bin/pulumi
 
 .PHONY: preview diff up refresh stack lint format install
 
@@ -23,13 +22,22 @@ stack: .make/stack_select_prod
 lint: install
 	yarn eslint .
 
-format: .make/format
+format fmt: .make/format
+
+bin/dprint: .versions/dprint | .make/dprint/install.sh
+	DPRINT_INSTALL=${CURDIR} .make/dprint/install.sh $(shell cat .versions/dprint)
+	@touch $@
 
 bin/pulumi: .versions/pulumi
-	curl -fsSL https://get.pulumi.com | sh -s -- --install-root ${WORKING_DIR} --version $(shell cat $<) --no-edit-path
+	curl -fsSL https://get.pulumi.com | sh -s -- --install-root ${CURDIR} --version $(shell cat $<) --no-edit-path
 
 .envrc: hack/example.envrc
 	cp $< $@
+
+.make/dprint/install.sh:
+	@mkdir -p $(dir $@)
+	curl -fsSL https://dprint.dev/install.sh -o $@
+	@chmod +x $@
 
 .make/pulumi_install: yarn.lock | bin/pulumi
 	$(PULUMI) install
