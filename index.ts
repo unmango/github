@@ -40,6 +40,11 @@ const kubebuilder = new PublicRepo('kubebuilder', {
 	githubChecks: ['build', 'lint', 'clean'],
 });
 
+const protofs = new PublicRepo('protofs', {
+	description: 'Protobuf definitions for filesystem abstractions',
+	githubChecks: ['buf'],
+});
+
 const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 	description: 'Pulumi bare-metal provisioning provider',
 	template: { owner: 'pulumi', repository: 'pulumi-provider-boilerplate' },
