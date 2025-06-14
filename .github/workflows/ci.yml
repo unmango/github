@@ -35,7 +35,7 @@ jobs:
 
       - name: Dprint check
         if: github.event_name == 'pull_request'
-        uses: dprint/check@v2.2
+        uses: dprint/check@v2.3
         with:
           dprint-version: ${{ env.DPRINT_VERSION }}
 
