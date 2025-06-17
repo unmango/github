@@ -35,6 +35,11 @@ const goPrivateInternetAccess = new PublicRepo('go-pia', {
 	githubChecks: ['Build and Test'],
 });
 
+const gnumakeGo = new PublicRepo('gnumake-go', {
+	description: 'Package gnumake provides Go bindings for GNU Make shared object loading',
+	githubChecks: ['Build and Test'],
+});
+
 const kubebuilder = new PublicRepo('kubebuilder', {
 	description: 'Collection of kubebuilder plugins',
 	githubChecks: ['build', 'lint', 'clean'],
@@ -69,7 +74,9 @@ export const repos = [
 	go.repo.name,
 	goMake.repo.name,
 	goPrivateInternetAccess.repo.name,
+	gnumakeGo.repo.name,
 	kubebuilder.repo.name,
+	protofs.repo.name,
 	pulumiBaremetal.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
