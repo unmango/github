@@ -1,9 +1,9 @@
 import * as gh from '@pulumi/github';
 import {
+	RepositoryPages,
 	RepositoryRulesetRules,
 	RepositoryRulesetRulesRequiredStatusChecks,
 	RepositoryTemplate,
-	RepositoryPages,
 } from '@pulumi/github/types/input';
 import { ComponentResourceOptions, Input, output } from '@pulumi/pulumi';
 import { Repo } from './repo';
