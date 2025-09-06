@@ -487,9 +487,9 @@
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
 "@pulumi/github@^6.7.0":
-  version "6.7.2"
-  resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-6.7.2.tgz#1e1d5be3387c4ada986b9923a3aede9aebf9a633"
-  integrity sha512-dsaCLKQXqTVChE5gsowDoI7J3ZcN+WQ2zamFqHeYbSTJ2NJ06ENK+INkwbrUnEqtLA5t6lfOIu2F97Yz0+LsRQ==
+  version "6.7.3"
+  resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-6.7.3.tgz#ece92e702f0a1a993c13a00f2270a69d1a38dbb8"
+  integrity sha512-uqXvZba3FIc5ZSZFk6G5fMtNvtjQAOP+pg8hXFx8VAd01eCXqquY6xgB5HlR7xhHclGanAjtyaWOyvTrHDP3kQ==
   dependencies:
     "@pulumi/pulumi" "^3.142.0"
 
