@@ -5,6 +5,10 @@ const aferox = new PublicRepo('aferox', {
 	githubChecks: ['Build and Test'],
 });
 
+const charts = new PublicRepo('charts', {
+	description: 'Smörgåsbord of Helm charts',
+});
+
 const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 	description: 'Manage Cloudflare infrastructure in Kubernetes',
 	githubChecks: ['Run on Ubuntu'], // TODO: I kinda hate this
