@@ -1,5 +1,6 @@
 import * as gh from '@pulumi/github';
 import {
+	RepositoryPages,
 	RepositoryRulesetRules,
 	RepositoryRulesetRulesRequiredStatusChecks,
 	RepositoryTemplate,
@@ -16,6 +17,7 @@ export interface PublicRepoArgs {
 	githubChecks?: Input<Input<string>[]>;
 	requiredChecks?: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'];
 	template?: RepositoryTemplate;
+	pages?: RepositoryPages;
 }
 
 export class PublicRepo extends Repo {
@@ -37,6 +39,7 @@ export class PublicRepo extends Repo {
 					allowAutoMerge: true,
 					template: args.template,
 					vulnerabilityAlerts: true,
+					pages: args.pages,
 				},
 			},
 			opts,
