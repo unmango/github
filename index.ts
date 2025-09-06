@@ -72,6 +72,7 @@ const theclusterOperator = new PublicRepo('thecluster-operator', {
 
 export const repos = [
 	aferox.repo.name,
+	charts.repo.name,
 	cloudflareOperator.repo.name,
 	devctl.repo.name,
 	game.repo.name,
