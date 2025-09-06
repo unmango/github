@@ -12,6 +12,14 @@ const charts = new PublicRepo('charts', {
 const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 	description: 'Manage Cloudflare infrastructure in Kubernetes',
 	githubChecks: ['Run on Ubuntu'], // TODO: I kinda hate this
+	pages: {
+		buildType: 'legacy',
+		cname: '',
+		source: {
+			branch: 'gh-pages',
+			path: '/',
+		},
+	},
 });
 
 const devctl = new PublicRepo('devctl', {
