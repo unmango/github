@@ -7,6 +7,15 @@ const aferox = new PublicRepo('aferox', {
 
 const charts = new PublicRepo('charts', {
 	description: 'Smörgåsbord of Helm charts',
+	githubChecks: ['lint'],
+	pages: {
+		buildType: 'legacy',
+		cname: '',
+		source: {
+			branch: 'gh-pages',
+			path: '/',
+		},
+	},
 });
 
 const cloudflareOperator = new PublicRepo('cloudflare-operator', {
