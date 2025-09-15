@@ -7,7 +7,10 @@ const aferox = new PublicRepo('aferox', {
 
 const charts = new PublicRepo('charts', {
 	description: 'Smörgåsbord of Helm charts',
-	githubChecks: ['lint'],
+	githubChecks: [
+		'lint (deemix)',
+		'lint (filebrowser)',
+	],
 	pages: {
 		buildType: 'legacy',
 		cname: '',
