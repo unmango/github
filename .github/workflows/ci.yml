@@ -56,4 +56,9 @@ jobs:
           stack-name: UnstoppableMango/unmango-github/prod
           refresh: true
           pulumi-version-file: .versions/pulumi
-          expect-no-changes: ${{ github.actor == 'renovate[bot]' }}
+          expect-no-changes: ${{ github.actor == 'renovate[bot]' || github.actor == 'thecluster-bot[bot]' }}
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_APP_ID: ${{ vars.APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ vars.APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.APP_PEM_FILE }}
