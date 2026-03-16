@@ -21,7 +21,7 @@ jobs:
       DPRINT_VERSION: 0.53.0
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup node
         uses: actions/setup-node@v5
