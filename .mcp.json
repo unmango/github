@@ -1,8 +1,8 @@
 {
-  "mcpServers": {
-    "pulumi": {
-      "type": "http",
-      "url": "https://mcp.ai.pulumi.com/mcp"
-    }
-  }
+	"mcpServers": {
+		"pulumi": {
+			"type": "http",
+			"url": "https://mcp.ai.pulumi.com/mcp"
+		}
+	}
 }
