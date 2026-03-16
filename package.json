@@ -4,7 +4,10 @@
 	"packageManager": "yarn@1.22.22",
 	"main": "index.ts",
 	"scripts": {
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"format": "dprint fmt",
+		"preview": "make preview",
+		"up": "make up"
 	},
 	"dependencies": {
 		"@pulumi/github": "^6.7.0",
