@@ -2,3 +2,8 @@ bin/
 node_modules/
 .make/
 .envrc
+.direnv/
+.vscode/*
+!.vscode/extensions.json
+.zed/*
+.claude/*
