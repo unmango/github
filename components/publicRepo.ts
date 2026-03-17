@@ -18,6 +18,7 @@ export interface PublicRepoArgs {
 	requiredChecks?: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'];
 	template?: RepositoryTemplate;
 	pages?: RepositoryPages;
+	topics?: Input<Input<string>[]>;
 }
 
 export class PublicRepo extends Repo {
@@ -40,6 +41,7 @@ export class PublicRepo extends Repo {
 					template: args.template,
 					vulnerabilityAlerts: true,
 					pages: args.pages,
+					topics: args.topics,
 				},
 			},
 			opts,
