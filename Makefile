@@ -1,32 +1,33 @@
 _ := $(shell mkdir -p .make)
 
-DPRINT ?= dprint
-NIX    ?= nix
-PULUMI ?= bin/pulumi
-YARN   ?= yarn
+DPRINT       ?= dprint
+NIX          ?= nix
+PULUMI       ?= pulumi
+YARN         ?= yarn
+PULUMI_FLAGS ?=
 
 TS_SRC != find . -name '*.ts' -not -path '**/node_modules/**'
 JS_SRC != find . \( -name '*.js' -o -name '*.mjs' \) -not -path '**/node_modules/**'
 
 .PHONY: preview diff up refresh stack lint format install update
 
-up: install stack | bin/pulumi
-	$(PULUMI) up
+up: install stack
+	$(PULUMI) up --refresh $(PULUMI_FLAGS)
 
-preview: install stack | bin/pulumi
-	$(PULUMI) preview
+preview: install stack
+	$(PULUMI) preview --refresh $(PULUMI_FLAGS)
 
-diff: install stack | bin/pulumi
-	$(PULUMI) preview --diff
+diff: install stack
+	$(PULUMI) preview --diff --refresh $(PULUMI_FLAGS)
 
-refresh: install stack | bin/pulumi
+refresh: install stack
 	$(PULUMI) refresh
 
 lint: install
-		$(YARN) eslint .
+	$(YARN) eslint .
 
 update:
-		$(NIX) flake update
+	$(NIX) flake update
 
 install: .make/pulumi_install
 stack: .make/stack_select_prod
@@ -35,11 +36,11 @@ format fmt: .make/format .make/nix_fmt
 .envrc: hack/example.envrc
 	cp $< $@
 
-.make/pulumi_install: yarn.lock | bin/pulumi
+.make/pulumi_install: yarn.lock
 	$(PULUMI) install
 	@touch $@
 
-.make/stack_select_prod: | bin/pulumi
+.make/stack_select_prod:
 	$(PULUMI) stack select prod
 	@touch $@
 

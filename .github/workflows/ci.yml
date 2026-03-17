@@ -16,32 +16,23 @@ jobs:
     concurrency:
       group: ${{ github.ref }}
       cancel-in-progress: true
-    env:
-      # renovate: datasource=github-releases depName=dprint/dprint
-      DPRINT_VERSION: 0.53.0
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Setup node
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: .nvmrc
-          cache: yarn
-          cache-dependency-path: yarn.lock
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
 
-      - name: Yarn install
-        run: yarn install --frozen-lockfile
+      - name: Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Dprint check
         if: github.event_name == 'pull_request'
-        uses: dprint/check@v2.3
-        with:
-          dprint-version: ${{ env.DPRINT_VERSION }}
+        run: nix develop -c dprint check
 
       - name: Lint
         if: github.event_name == 'pull_request'
-        run: yarn lint
+        run: nix develop -c make lint
 
       - name: Pulumi login
         uses: pulumi/auth-actions@v1
@@ -50,10 +41,14 @@ jobs:
           requested-token-type: urn:pulumi:token-type:access_token:personal
           scope: user:UnstoppableMango
 
-      - uses: pulumi/actions@v6
-        with:
-          command: ${{ github.event_name == 'pull_request' && 'preview' || 'up' }}
-          stack-name: UnstoppableMango/unmango-github/prod
-          refresh: true
-          pulumi-version-file: .versions/pulumi
-          expect-no-changes: ${{ github.actor == 'renovate[bot]' }}
+      - name: Preview
+        if: github.event_name == 'pull_request'
+        env:
+          PULUMI_FLAGS: ${{ github.actor == 'renovate[bot]' && '--expect-no-changes' || '' }}
+        run: nix develop -c make preview
+
+      - name: Deploy
+        if: github.event_name == 'push'
+        env:
+          PULUMI_FLAGS: ${{ github.actor == 'renovate[bot]' && '--expect-no-changes' || '' }}
+        run: nix develop -c make up
