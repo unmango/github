@@ -1,9 +1,11 @@
 _ := $(shell mkdir -p .make)
 
-DPRINT       ?= dprint
-NIX          ?= nix
-PULUMI       ?= pulumi
-YARN         ?= yarn
+DPRINT        ?= dprint
+FLAKE_CHECKER ?= flake-checker
+NIX           ?= nix
+PULUMI        ?= pulumi
+YARN          ?= yarn
+
 PULUMI_FLAGS ?=
 
 TS_SRC != find . -name '*.ts' -not -path '**/node_modules/**'
@@ -28,6 +30,10 @@ lint: install
 
 update:
 	$(NIX) flake update
+
+check:
+	$(NIX) flake check
+	$(FLAKE_CHECKER) flake.lock
 
 install: .make/pulumi_install
 stack: .make/stack_select_prod

@@ -24,6 +24,7 @@
           devShells.default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               dprint
+              flake-checker
               gnumake
               nixfmt
               nodejs_24
@@ -33,10 +34,13 @@
             ];
 
             DPRINT = pkgs.dprint + "/bin/dprint";
+            FLAKE_CHECKER = pkgs.flake-checker + "/bin/flake-checker";
             NIXFMT = pkgs.nixfmt + "/bin/nixfmt";
             NODE = pkgs.nodejs_24 + "/bin/node";
             PULUMI = pkgs.pulumi-bin + "/bin/pulumi";
             YARN = pkgs.yarn + "/bin/yarn";
+
+            FLAKE_CHECKER_NO_TELEMETRY = "true";
           };
 
           treefmt = {
