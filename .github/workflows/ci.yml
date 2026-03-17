@@ -41,14 +41,20 @@ jobs:
           requested-token-type: urn:pulumi:token-type:access_token:personal
           scope: user:UnstoppableMango
 
+      - name: Set Pulumi flags
+        run: |
+          flags=""
+          if [ "${{ github.actor }}" = "renovate[bot]" ]; then
+            flags="$flags --expect-no-changes"
+          fi
+          echo "PULUMI_FLAGS=$flags" >> "$GITHUB_ENV"
+
       - name: Preview
         if: github.event_name == 'pull_request'
-        env:
-          PULUMI_FLAGS: ${{ github.actor == 'renovate[bot]' && '--expect-no-changes' || '' }}
         run: nix develop -c make preview
 
       - name: Deploy
         if: github.event_name == 'push'
         env:
-          PULUMI_FLAGS: ${{ github.actor == 'renovate[bot]' && '--expect-no-changes' || '' }}
+          PULUMI_FLAGS: --yes ${{ env.PULUMI_FLAGS }}
         run: nix develop -c make up
