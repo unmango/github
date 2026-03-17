@@ -7,6 +7,7 @@ const aferox = new PublicRepo('aferox', {
 
 const apis = new PublicRepo('apis', {
 	description: 'Public API definitions',
+	topics: ['api', 'protobuf', 'grpc', 'openapi'],
 	githubChecks: ['build', 'lint', 'clean'],
 });
 
