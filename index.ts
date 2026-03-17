@@ -5,6 +5,11 @@ const aferox = new PublicRepo('aferox', {
 	githubChecks: ['Build and Test'],
 });
 
+const apis = new PublicRepo('apis', {
+	description: 'Public API definitions',
+	githubChecks: ['build', 'lint', 'clean'],
+});
+
 const charts = new PublicRepo('charts', {
 	description: 'Smörgåsbord of Helm charts',
 	githubChecks: [
@@ -92,6 +97,7 @@ const theclusterOperator = new PublicRepo('thecluster-operator', {
 
 export const repos = [
 	aferox.repo.name,
+	apis.repo.name,
 	charts.repo.name,
 	cloudflareOperator.repo.name,
 	devctl.repo.name,
