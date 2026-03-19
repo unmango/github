@@ -8,15 +8,12 @@ const aferox = new PublicRepo('aferox', {
 const apis = new PublicRepo('apis', {
 	description: 'Public API definitions',
 	topics: ['api', 'protobuf', 'grpc', 'openapi'],
-	githubChecks: ['build', 'lint', 'clean'],
+	githubChecks: ['check'],
 });
 
 const charts = new PublicRepo('charts', {
 	description: 'Smörgåsbord of Helm charts',
-	githubChecks: [
-		'lint (deemix)',
-		'lint (filebrowser)',
-	],
+	githubChecks: ['lint (deemix)', 'lint (filebrowser)'],
 	pages: {
 		buildType: 'legacy',
 		cname: '',
