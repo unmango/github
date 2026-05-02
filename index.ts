@@ -13,7 +13,7 @@ const apis = new PublicRepo('apis', {
 
 const charts = new PublicRepo('charts', {
 	description: 'Smörgåsbord of Helm charts',
-	githubChecks: ['lint (deemix)', 'lint (filebrowser)'],
+	githubChecks: ['lint'],
 	pages: {
 		buildType: 'legacy',
 		cname: '',
