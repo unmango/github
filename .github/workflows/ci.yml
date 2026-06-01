@@ -35,7 +35,7 @@ jobs:
         run: nix develop -c make lint
 
       - name: Pulumi login
-        uses: pulumi/auth-actions@v1
+        uses: pulumi/auth-actions@v2
         with:
           organization: UnstoppableMango
           requested-token-type: urn:pulumi:token-type:access_token:personal
