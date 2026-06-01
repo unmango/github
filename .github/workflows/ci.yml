@@ -24,7 +24,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v22
 
       - name: Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v13
+        uses: DeterminateSystems/magic-nix-cache-action@v14
 
       - name: Dprint check
         if: github.event_name == 'pull_request'
