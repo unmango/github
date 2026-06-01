@@ -16,7 +16,8 @@ export class PrivateRepo extends Repo {
 		}, opts);
 
 		const repo = this.repo;
+		const vulnerabilityAlerts = this.vulnerabilityAlerts;
 
-		this.registerOutputs({ repo });
+		this.registerOutputs({ repo, vulnerabilityAlerts });
 	}
 }

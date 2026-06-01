@@ -39,7 +39,6 @@ export class PublicRepo extends Repo {
 					visibility: 'public',
 					allowAutoMerge: true,
 					template: args.template,
-					vulnerabilityAlerts: true,
 					pages: args.pages,
 					topics: args.topics,
 				},
@@ -48,6 +47,7 @@ export class PublicRepo extends Repo {
 		);
 
 		const repo = this.repo;
+		const vulnerabilityAlerts = this.vulnerabilityAlerts;
 		const statusChecks = args.githubChecks
 			? getGitHubStatusChecks(args.githubChecks)
 			: getRequiredStatusChecks(args.requiredChecks);
@@ -85,6 +85,7 @@ export class PublicRepo extends Repo {
 		this.registerOutputs({
 			repo,
 			mainRuleset,
+			vulnerabilityAlerts,
 		});
 	}
 }
