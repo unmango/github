@@ -7,6 +7,7 @@ export interface RepoArgs {
 
 export abstract class Repo extends ComponentResource {
 	public readonly repo!: gh.Repository;
+	public readonly vulnerabilityAlerts!: gh.RepositoryVulnerabilityAlerts;
 
 	constructor(type: string, name: string, args: RepoArgs, opts?: ComponentResourceOptions) {
 		super(type, name, args, opts);
@@ -29,6 +30,11 @@ export abstract class Repo extends ComponentResource {
 			...args.overrides,
 		}, { parent: this });
 
+		const vulnerabilityAlerts = new gh.RepositoryVulnerabilityAlerts(name, {
+			repository: repo.name,
+		}, { parent: this });
+
 		this.repo = repo;
+		this.vulnerabilityAlerts = vulnerabilityAlerts;
 	}
 }
