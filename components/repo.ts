@@ -30,10 +30,11 @@ export abstract class Repo extends ComponentResource {
 			...args.overrides,
 		}, { parent: this });
 
-		this.repo = repo;
-
-		this.vulnerabilityAlerts = new gh.RepositoryVulnerabilityAlerts(name, {
+		const vulnerabilityAlerts = new gh.RepositoryVulnerabilityAlerts(name, {
 			repository: repo.name,
 		}, { parent: this });
+
+		this.repo = repo;
+		this.vulnerabilityAlerts = vulnerabilityAlerts;
 	}
 }
