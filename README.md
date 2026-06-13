@@ -12,8 +12,8 @@ This repository replaces manual GitHub UI configuration with declarative TypeScr
 
 Every public repository under [@unmango](https://github.com/unmango) is defined in [`index.ts`](./index.ts). Each repo gets:
 
-- **Branch protection** on `main`: required PRs, stale review dismissal, required status checks, commit signatures, linear history
-- **Consistent merge settings**: squash-only, delete branch on merge, no auto-merge
+- **Branch protection** on the default branch (usually `main`): required PRs, stale review dismissal, required status checks, commit signatures, linear history
+- **Consistent merge settings**: squash-only, delete branch on merge, auto-merge enabled
 - **MIT license** and vulnerability alerts enabled by default
 
 Private repos use a minimal configuration without branch rulesets.
