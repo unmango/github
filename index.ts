@@ -1,5 +1,10 @@
 import { PublicRepo } from './components';
 
+const actions = new PublicRepo('actions', {
+	description: 'Shared GitHub Actions',
+	githubChecks: ['build', 'check'],
+});
+
 const aferox = new PublicRepo('aferox', {
 	description: 'Implementations and utilities for github.com/spf13/afero',
 	githubChecks: ['Build and Test'],
@@ -94,6 +99,7 @@ const theclusterOperator = new PublicRepo('thecluster-operator', {
 });
 
 export const repos = [
+	actions.repo.name,
 	aferox.repo.name,
 	apis.repo.name,
 	charts.repo.name,
