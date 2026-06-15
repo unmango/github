@@ -88,6 +88,12 @@ const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 	githubChecks: ['Provisioner', 'Provider', 'Tests'],
 });
 
+const pkgs = new PublicRepo('pkgs', {
+	description: 'Mini nixpkgs — personal Nix package collection',
+	topics: ['nix', 'nixpkgs', 'nix-flake'],
+	githubChecks: ['build'],
+});
+
 const thecluster = new PublicRepo('thecluster', {
 	description: 'DevOps tooling for managing a Kubernetes cluster with Pulumi micro-stacks',
 	githubChecks: ['Build and Test'],
@@ -111,6 +117,7 @@ export const repos = [
 	goPrivateInternetAccess.repo.name,
 	gnumakeGo.repo.name,
 	kubebuilder.repo.name,
+	pkgs.repo.name,
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
 	thecluster.repo.name,
