@@ -72,6 +72,11 @@ const gnumakeGo = new PublicRepo('gnumake-go', {
 	githubChecks: ['Build and Test'],
 });
 
+const kubepkgs = new PublicRepo('kubepkgs', {
+	description: 'Nix packaged Kubernetes components and utilities',
+	githubChecks: ['build'],
+});
+
 const kubebuilder = new PublicRepo('kubebuilder', {
 	description: 'Collection of kubebuilder plugins',
 	githubChecks: ['build', 'lint', 'clean'],
@@ -110,6 +115,7 @@ export const repos = [
 	goMake.repo.name,
 	goPrivateInternetAccess.repo.name,
 	gnumakeGo.repo.name,
+	kubepkgs.repo.name,
 	kubebuilder.repo.name,
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
