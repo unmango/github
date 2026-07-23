@@ -96,7 +96,7 @@ const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 const pkgs = new PublicRepo('pkgs', {
 	description: 'Mini nixpkgs — personal Nix package collection',
 	topics: ['nix', 'nixpkgs', 'nix-flake'],
-	githubChecks: ['build'],
+	githubChecks: ['build (ubuntu-latest)'],
 });
 
 const thecluster = new PublicRepo('thecluster', {
