@@ -93,6 +93,12 @@ const pulumiBaremetal = new PublicRepo('pulumi-baremetal', {
 	githubChecks: ['Provisioner', 'Provider', 'Tests'],
 });
 
+const pulumipkgs = new PublicRepo('pulumipkgs', {
+	description: 'Pulumi, providers, and plugins packaged for Nix',
+	topics: ['nix', 'nixpkgs', 'nix-flake', 'pulumi'],
+	githubChecks: ['build'],
+});
+
 const pkgs = new PublicRepo('pkgs', {
 	description: 'Mini nixpkgs — personal Nix package collection',
 	topics: ['nix', 'nixpkgs', 'nix-flake'],
@@ -125,6 +131,7 @@ export const repos = [
 	kubebuilder.repo.name,
 	pkgs.repo.name,
 	protofs.repo.name,
+	pulumipkgs.repo.name,
 	pulumiBaremetal.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
