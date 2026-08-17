@@ -131,8 +131,8 @@ export const repos = [
 	kubebuilder.repo.name,
 	pkgs.repo.name,
 	protofs.repo.name,
-	pulumipkgs.repo.name,
 	pulumiBaremetal.repo.name,
+	pulumipkgs.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
 ];
