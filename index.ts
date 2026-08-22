@@ -2,7 +2,7 @@ import { PublicRepo } from './components';
 
 const actions = new PublicRepo('actions', {
 	description: 'Shared GitHub Actions',
-	githubChecks: ['build', 'check'],
+	githubChecks: ['check'],
 });
 
 const aferox = new PublicRepo('aferox', {
