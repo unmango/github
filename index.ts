@@ -44,7 +44,7 @@ const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 
 const devctl = new PublicRepo('devctl', {
 	description: 'Dev productivity CLI',
-	githubChecks: ['Build and Test'],
+	githubChecks: ['build'],
 });
 
 const game = new PublicRepo('game', {
