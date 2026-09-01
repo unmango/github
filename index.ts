@@ -67,9 +67,11 @@ const goPrivateInternetAccess = new PublicRepo('go-pia', {
 	githubChecks: ['Build and Test'],
 });
 
-const gnumakeGo = new PublicRepo('gnumake-go', {
-	description: 'Package gnumake provides Go bindings for GNU Make shared object loading',
+const goGmk = new PublicRepo('gnumake-go', {
+	repoName: 'go-gmk',
+	description: 'Go bindings for the GNU Make loadable object API',
 	githubChecks: ['build'],
+	topics: ['go', 'make', 'gnumake', 'cgo', 'plugin'],
 });
 
 const kubepkgs = new PublicRepo('kubepkgs', {
@@ -126,7 +128,7 @@ export const repos = [
 	go.repo.name,
 	goMake.repo.name,
 	goPrivateInternetAccess.repo.name,
-	gnumakeGo.repo.name,
+	goGmk.repo.name,
 	kubepkgs.repo.name,
 	kubebuilder.repo.name,
 	pkgs.repo.name,

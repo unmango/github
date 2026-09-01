@@ -14,6 +14,12 @@ const integrationIds = {
 
 export interface PublicRepoArgs {
 	description: Input<string>;
+	/**
+	 * The name of the repository on GitHub, when it differs from the Pulumi
+	 * resource name. Renaming the resource itself would change its URN and
+	 * every child's, which Pulumi would carry out as a delete and recreate.
+	 */
+	repoName?: Input<string>;
 	githubChecks?: Input<Input<string>[]>;
 	requiredChecks?: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'];
 	template?: RepositoryTemplate;
@@ -34,7 +40,7 @@ export class PublicRepo extends Repo {
 			name,
 			{
 				overrides: {
-					name,
+					name: args.repoName ?? name,
 					description: args.description,
 					visibility: 'public',
 					allowAutoMerge: true,
