@@ -2,7 +2,7 @@ import { PublicRepo } from './components';
 
 const actions = new PublicRepo('actions', {
 	description: 'Blessed GitHub Actions',
-	githubChecks: ['build', 'check'],
+	githubChecks: ['check'],
 });
 
 const aferox = new PublicRepo('aferox', {
@@ -44,7 +44,7 @@ const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 
 const devctl = new PublicRepo('devctl', {
 	description: 'Dev productivity CLI',
-	githubChecks: ['Build and Test'],
+	githubChecks: ['build'],
 });
 
 const game = new PublicRepo('game', {
@@ -69,7 +69,7 @@ const goPrivateInternetAccess = new PublicRepo('go-pia', {
 
 const gnumakeGo = new PublicRepo('gnumake-go', {
 	description: 'Package gnumake provides Go bindings for GNU Make shared object loading',
-	githubChecks: ['Build and Test'],
+	githubChecks: ['build'],
 });
 
 const kubepkgs = new PublicRepo('kubepkgs', {
