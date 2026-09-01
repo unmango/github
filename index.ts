@@ -69,7 +69,7 @@ const goPrivateInternetAccess = new PublicRepo('go-pia', {
 
 const gnumakeGo = new PublicRepo('gnumake-go', {
 	description: 'Package gnumake provides Go bindings for GNU Make shared object loading',
-	githubChecks: ['Build and Test'],
+	githubChecks: ['build'],
 });
 
 const kubepkgs = new PublicRepo('kubepkgs', {
