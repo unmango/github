@@ -1,7 +1,7 @@
 import { PublicRepo } from './components';
 
 const actions = new PublicRepo('actions', {
-	description: 'Shared GitHub Actions',
+	description: 'Blessed GitHub Actions',
 	githubChecks: ['check'],
 });
 
