@@ -67,9 +67,9 @@ const goPrivateInternetAccess = new PublicRepo('go-pia', {
 	githubChecks: ['Build and Test'],
 });
 
+// Keep the Pulumi resource name as "gnumake-go" to preserve URNs; the GitHub repo is renamed via repoName.
 const goGmk = new PublicRepo('gnumake-go', {
 	repoName: 'go-gmk',
-	description: 'Go bindings for the GNU Make loadable object API',
 	githubChecks: ['build'],
 	topics: ['go', 'make', 'gnumake', 'cgo', 'plugin'],
 });
