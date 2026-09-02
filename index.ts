@@ -116,6 +116,23 @@ const pkgs = new PublicRepo('pkgs', {
 	githubChecks: ['build (x86_64-linux)'],
 });
 
+const terraform2crd = new PublicRepo('terraform2crd', {
+	description: 'Converts Terraform provider code specs to Custom Resource Definitions (CRDs)',
+	topics: ['terraform', 'crd', 'kubernetes', 'codegen'],
+	// Moved from gitlab.com/unmango/terraform/2crd, so the repository already exists.
+	repoOptions: { import: 'terraform2crd' },
+});
+
+// Registry-locked name, do not shorten.
+const terraformProviderNetgear = new PublicRepo('terraform-provider-netgear', {
+	description: 'Terraform provider for (some) NetGear devices',
+	topics: ['terraform', 'opentofu', 'netgear', 'go'],
+	githubChecks: ['build', 'codegen'],
+	// Moved from gitlab.com/unmango/terraform/terraform-provider-netgear, so the
+	// repository already exists.
+	repoOptions: { import: 'terraform-provider-netgear' },
+});
+
 const thecluster = new PublicRepo('thecluster', {
 	description: 'DevOps tooling for managing a Kubernetes cluster with Pulumi micro-stacks',
 	githubChecks: ['Build and Test'],
@@ -145,6 +162,8 @@ export const repos = [
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
 	pulumipkgs.repo.name,
+	terraform2crd.repo.name,
+	terraformProviderNetgear.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
 ];
