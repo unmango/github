@@ -5,7 +5,7 @@ import {
 	RepositoryRulesetRulesRequiredStatusChecks,
 	RepositoryTemplate,
 } from '@pulumi/github/types/input';
-import { ComponentResourceOptions, Input, output } from '@pulumi/pulumi';
+import { ComponentResourceOptions, CustomResourceOptions, Input, output } from '@pulumi/pulumi';
 import { Repo } from './repo';
 
 const integrationIds = {
@@ -25,6 +25,8 @@ export interface PublicRepoArgs {
 	template?: RepositoryTemplate;
 	pages?: RepositoryPages;
 	topics?: Input<Input<string>[]>;
+	/** Passed through to the repository resource, for adopting one that already exists. */
+	repoOptions?: CustomResourceOptions;
 }
 
 export class PublicRepo extends Repo {
@@ -48,6 +50,7 @@ export class PublicRepo extends Repo {
 					pages: args.pages,
 					topics: args.topics,
 				},
+				repoOptions: args.repoOptions,
 			},
 			opts,
 		);

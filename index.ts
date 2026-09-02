@@ -85,6 +85,14 @@ const kubebuilder = new PublicRepo('kubebuilder', {
 	githubChecks: ['build', 'lint', 'clean'],
 });
 
+const nix2git = new PublicRepo('nix2git', {
+	description: 'Nix support for initializing and managing git repositories',
+	topics: ['nix', 'git', 'nix-flake', 'home-manager'],
+	githubChecks: ['check'],
+	// Moved from gitlab.com/unmango/nix/2git, so the repository already exists.
+	repoOptions: { import: 'nix2git' },
+});
+
 const protofs = new PublicRepo('protofs', {
 	description: 'Protobuf definitions for filesystem abstractions',
 	githubChecks: ['buf'],
@@ -132,6 +140,7 @@ export const repos = [
 	goGmk.repo.name,
 	kubepkgs.repo.name,
 	kubebuilder.repo.name,
+	nix2git.repo.name,
 	pkgs.repo.name,
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
