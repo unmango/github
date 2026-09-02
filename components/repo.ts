@@ -1,8 +1,14 @@
 import * as gh from '@pulumi/github';
-import { ComponentResource, ComponentResourceOptions } from '@pulumi/pulumi';
+import { ComponentResource, ComponentResourceOptions, CustomResourceOptions } from '@pulumi/pulumi';
 
 export interface RepoArgs {
 	overrides: Partial<gh.RepositoryArgs>;
+	/**
+	 * Options for the repository resource itself, on top of its parent. It is how
+	 * a repository that already exists on GitHub is adopted: an import, or an
+	 * alias for one whose URN is moving.
+	 */
+	repoOptions?: CustomResourceOptions;
 }
 
 export abstract class Repo extends ComponentResource {
@@ -28,7 +34,7 @@ export abstract class Repo extends ComponentResource {
 			squashMergeCommitMessage: 'COMMIT_MESSAGES',
 			squashMergeCommitTitle: 'COMMIT_OR_PR_TITLE',
 			...args.overrides,
-		}, { parent: this });
+		}, { parent: this, ...args.repoOptions });
 
 		const vulnerabilityAlerts = new gh.RepositoryVulnerabilityAlerts(name, {
 			repository: repo.name,
