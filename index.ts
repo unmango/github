@@ -31,7 +31,7 @@ const charts = new PublicRepo('charts', {
 
 const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 	description: 'Manage Cloudflare infrastructure in Kubernetes',
-	githubChecks: ['Run on Ubuntu'], // TODO: I kinda hate this
+	githubChecks: ['build', 'lint', 'test'],
 	pages: {
 		buildType: 'legacy',
 		cname: '',
