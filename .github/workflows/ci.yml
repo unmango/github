@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   pulumi:
-    runs-on: ubuntu-latest
+    runs-on: thecluster
     concurrency:
       group: ${{ github.ref }}
       cancel-in-progress: true
