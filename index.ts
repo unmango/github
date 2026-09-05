@@ -42,6 +42,12 @@ const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 	},
 });
 
+const containers = new PublicRepo('containers', {
+	description: 'Smörgåsbord of OCI containers',
+	topics: ['docker', 'oci', 'containers', 'ghcr', 'container-registry'],
+	githubChecks: ['build'],
+});
+
 const devctl = new PublicRepo('devctl', {
 	description: 'Dev productivity CLI',
 	githubChecks: ['build'],
@@ -149,6 +155,7 @@ export const repos = [
 	apis.repo.name,
 	charts.repo.name,
 	cloudflareOperator.repo.name,
+	containers.repo.name,
 	devctl.repo.name,
 	game.repo.name,
 	go.repo.name,
