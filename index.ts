@@ -45,7 +45,11 @@ const cloudflareOperator = new PublicRepo('cloudflare-operator', {
 const containers = new PublicRepo('containers', {
 	description: 'Smörgåsbord of OCI containers',
 	topics: ['docker', 'oci', 'containers', 'ghcr', 'container-registry'],
-	githubChecks: ['build'],
+	// One summary job per workflow: `build` ends CI, `image` ends Images. Both
+	// need every other job in their workflow. The real work runs in matrices
+	// over systems and images, which report a context per leg and cannot be
+	// required here without naming each one.
+	githubChecks: ['build', 'image'],
 });
 
 const devctl = new PublicRepo('devctl', {
