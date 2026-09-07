@@ -124,6 +124,10 @@ const pkgs = new PublicRepo('pkgs', {
 	description: 'Mini nixpkgs — personal Nix package collection',
 	topics: ['nix', 'nixpkgs', 'nix-flake'],
 	githubChecks: ['build (x86_64-linux)'],
+	// Lockfiles under pkgs/ record what upstream projects pin, not what this
+	// repo depends on. Their advisories are unactionable here and accumulate
+	// with every package added.
+	vulnerabilityAlerts: false,
 });
 
 const terraform2crd = new PublicRepo('terraform2crd', {

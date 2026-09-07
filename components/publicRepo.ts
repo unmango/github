@@ -27,6 +27,8 @@ export interface PublicRepoArgs {
 	topics?: Input<Input<string>[]>;
 	/** Passed through to the repository resource, for adopting one that already exists. */
 	repoOptions?: CustomResourceOptions;
+	/** Whether Dependabot raises alerts for the repository. Defaults to enabled. */
+	vulnerabilityAlerts?: Input<boolean>;
 }
 
 export class PublicRepo extends Repo {
@@ -51,6 +53,7 @@ export class PublicRepo extends Repo {
 					topics: args.topics,
 				},
 				repoOptions: args.repoOptions,
+				vulnerabilityAlerts: args.vulnerabilityAlerts,
 			},
 			opts,
 		);

@@ -1,5 +1,5 @@
 import * as gh from '@pulumi/github';
-import { ComponentResource, ComponentResourceOptions, CustomResourceOptions } from '@pulumi/pulumi';
+import { ComponentResource, ComponentResourceOptions, CustomResourceOptions, Input } from '@pulumi/pulumi';
 
 export interface RepoArgs {
 	overrides: Partial<gh.RepositoryArgs>;
@@ -9,6 +9,8 @@ export interface RepoArgs {
 	 * alias for one whose URN is moving.
 	 */
 	repoOptions?: CustomResourceOptions;
+	/** Whether Dependabot raises alerts for the repository. Defaults to enabled. */
+	vulnerabilityAlerts?: Input<boolean>;
 }
 
 export abstract class Repo extends ComponentResource {
@@ -38,6 +40,7 @@ export abstract class Repo extends ComponentResource {
 
 		const vulnerabilityAlerts = new gh.RepositoryVulnerabilityAlerts(name, {
 			repository: repo.name,
+			enabled: args.vulnerabilityAlerts,
 		}, { parent: this });
 
 		this.repo = repo;
