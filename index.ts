@@ -147,6 +147,12 @@ const terraformProviderNetgear = new PublicRepo('terraform-provider-netgear', {
 	repoOptions: { import: 'terraform-provider-netgear' },
 });
 
+const tfpkgs = new PublicRepo('tfpkgs', {
+	description: 'Terraform, providers, and plugins packaged for Nix',
+	topics: ['nix', 'nixpkgs', 'nix-flake', 'terraform'],
+	githubChecks: ['build'],
+});
+
 const thecluster = new PublicRepo('thecluster', {
 	description: 'DevOps tooling for managing a Kubernetes cluster with Pulumi micro-stacks',
 	githubChecks: ['Build and Test'],
@@ -179,6 +185,7 @@ export const repos = [
 	pulumipkgs.repo.name,
 	terraform2crd.repo.name,
 	terraformProviderNetgear.repo.name,
+	tfpkgs.repo.name,
 	thecluster.repo.name,
 	theclusterOperator.repo.name,
 ];
