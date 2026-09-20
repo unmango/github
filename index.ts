@@ -144,6 +144,12 @@ const pkgs = new PublicRepo('pkgs', {
 	vulnerabilityAlerts: false,
 });
 
+const strata = new PublicRepo('strata', {
+	description: 'Nix-first developer environments built from a base template and layered patches',
+	topics: ['nix', 'nix-flake', 'developer-environment', 'patches', 'git'],
+	githubChecks: ['check'],
+});
+
 const terraform2crd = new PublicRepo('terraform2crd', {
 	description: 'Converts Terraform provider code specs to Custom Resource Definitions (CRDs)',
 	topics: ['terraform', 'crd', 'kubernetes', 'codegen'],
@@ -198,6 +204,7 @@ export const repos = [
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
 	pulumipkgs.repo.name,
+	strata.repo.name,
 	terraform2crd.repo.name,
 	terraformProviderNetgear.repo.name,
 	tfpkgs.repo.name,
