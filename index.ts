@@ -95,6 +95,12 @@ const kubebuilder = new PublicRepo('kubebuilder', {
 	githubChecks: ['build', 'lint', 'clean'],
 });
 
+const nift = new PublicRepo('nift', {
+	description: 'True templating for nix flake templates, with variable replacement',
+	topics: ['nix', 'nix-flake', 'templates', 'scaffolding'],
+	githubChecks: ['check'],
+});
+
 const nix2git = new PublicRepo('nix2git', {
 	description: 'Nix support for initializing and managing git repositories',
 	topics: ['nix', 'git', 'nix-flake', 'home-manager'],
@@ -198,6 +204,7 @@ export const repos = [
 	goGmk.repo.name,
 	kubepkgs.repo.name,
 	kubebuilder.repo.name,
+	nift.repo.name,
 	nix2git.repo.name,
 	palworldOperator.repo.name,
 	pkgs.repo.name,
