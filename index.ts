@@ -103,6 +103,20 @@ const nix2git = new PublicRepo('nix2git', {
 	repoOptions: { import: 'nix2git' },
 });
 
+const palworldOperator = new PublicRepo('palworld-operator', {
+	description: 'Manage Palworld servers in Kubernetes',
+	topics: ['kubernetes', 'operator', 'palworld', 'kubebuilder', 'go'],
+	githubChecks: ['build', 'lint', 'test'],
+	pages: {
+		buildType: 'legacy',
+		cname: '',
+		source: {
+			branch: 'gh-pages',
+			path: '/',
+		},
+	},
+});
+
 const protofs = new PublicRepo('protofs', {
 	description: 'Protobuf definitions for filesystem abstractions',
 	githubChecks: ['buf'],
@@ -179,6 +193,7 @@ export const repos = [
 	kubepkgs.repo.name,
 	kubebuilder.repo.name,
 	nix2git.repo.name,
+	palworldOperator.repo.name,
 	pkgs.repo.name,
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
