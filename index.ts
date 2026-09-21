@@ -57,6 +57,12 @@ const devctl = new PublicRepo('devctl', {
 	githubChecks: ['build'],
 });
 
+const enclave = new PublicRepo('enclave', {
+	description: 'Manage development environments in Kubernetes',
+	topics: ['kubernetes', 'operator', 'development-environment', 'kubebuilder', 'go'],
+	githubChecks: ['build', 'lint', 'test'],
+});
+
 const game = new PublicRepo('game', {
 	description: 'A gaming framework',
 	githubChecks: ['Build and Test'],
@@ -197,6 +203,7 @@ export const repos = [
 	cloudflareOperator.repo.name,
 	containers.repo.name,
 	devctl.repo.name,
+	enclave.repo.name,
 	game.repo.name,
 	go.repo.name,
 	goMake.repo.name,
