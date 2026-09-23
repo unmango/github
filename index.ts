@@ -175,6 +175,12 @@ const terraform2crd = new PublicRepo('terraform2crd', {
 	repoOptions: { import: 'terraform2crd' },
 });
 
+const terraformBackendSops = new PublicRepo('terraform-backend-sops', {
+	description: 'sops-encrypted OpenTofu and Terraform state with multiple recipients and pluggable storage',
+	topics: ['terraform', 'opentofu', 'sops', 'age', 'go'],
+	githubChecks: ['build'],
+});
+
 // Registry-locked name, do not shorten.
 const terraformProviderNetgear = new PublicRepo('terraform-provider-netgear', {
 	description: 'Terraform provider for (some) NetGear devices',
@@ -227,6 +233,7 @@ export const repos = [
 	pulumipkgs.repo.name,
 	strata.repo.name,
 	terraform2crd.repo.name,
+	terraformBackendSops.repo.name,
 	terraformProviderNetgear.repo.name,
 	tfpkgs.repo.name,
 	thecluster.repo.name,
