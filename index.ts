@@ -162,6 +162,14 @@ const pkgs = new PublicRepo('pkgs', {
 	vulnerabilityAlerts: false,
 });
 
+const slip = new PublicRepo('slip', {
+	description: 'Capture a thought into a zettel with as little ceremony as possible',
+	topics: ['zettelkasten', 'notes', 'knowledge-management', 'markdown', 'go'],
+	githubChecks: ['build'],
+	// Transferred from UnstoppableMango/zettelkasten, so the repository already exists.
+	repoOptions: { import: 'slip' },
+});
+
 const strata = new PublicRepo('strata', {
 	description: 'Nix-first developer environments built from a base template and layered patches',
 	topics: ['nix', 'nix-flake', 'developer-environment', 'patches', 'git'],
@@ -225,6 +233,7 @@ export const repos = [
 	protofs.repo.name,
 	pulumiBaremetal.repo.name,
 	pulumipkgs.repo.name,
+	slip.repo.name,
 	strata.repo.name,
 	terraform2crd.repo.name,
 	terraformProviderNetgear.repo.name,
