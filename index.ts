@@ -184,6 +184,13 @@ const terraform2crd = new PublicRepo('terraform2crd', {
 });
 
 // Registry-locked name, do not shorten.
+const terraformProviderAtproto = new PublicRepo('terraform-provider-atproto', {
+	description: 'Terraform provider for AT Protocol records, with first-class Tangled support',
+	topics: ['terraform', 'opentofu', 'atproto', 'bluesky', 'tangled', 'go'],
+	githubChecks: ['build', 'codegen'],
+});
+
+// Registry-locked name, do not shorten.
 const terraformProviderNetgear = new PublicRepo('terraform-provider-netgear', {
 	description: 'Terraform provider for (some) NetGear devices',
 	topics: ['terraform', 'opentofu', 'netgear', 'go'],
@@ -236,6 +243,7 @@ export const repos = [
 	slip.repo.name,
 	strata.repo.name,
 	terraform2crd.repo.name,
+	terraformProviderAtproto.repo.name,
 	terraformProviderNetgear.repo.name,
 	tfpkgs.repo.name,
 	thecluster.repo.name,
