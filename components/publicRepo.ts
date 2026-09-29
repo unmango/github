@@ -87,7 +87,6 @@ export class PublicRepo extends Repo {
 					},
 					nonFastForward: true,
 					requiredLinearHistory: true,
-					requiredSignatures: true,
 					requiredStatusChecks: statusChecks,
 				},
 			},
