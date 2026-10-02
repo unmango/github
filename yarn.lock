@@ -546,9 +546,9 @@
     "@pulumi/pulumi" "^3.142.0"
 
 "@pulumi/pulumi@^3.142.0", "@pulumi/pulumi@^3.162.0":
-  version "3.266.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.266.0.tgz#690d75e0906c7a11aea21c5e168a1fea22063062"
-  integrity sha512-aM1TzVKR0XkqcvEVT4ewZY6m6c/UHyj0JLy9OuTLzGjLl+OBzrFfS0XM3kEW1RGDG9aEboyTyVrk8Tzs4OLmPA==
+  version "3.267.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.267.0.tgz#3bf393bc0b18598507f4f6149c15baf082e015ec"
+  integrity sha512-dd/K3sxqNKqiYAvcg14TtEL7ZYqSyphMQMuqDeZvooX7jIKaa0t6QeNBnu6KeyH4bqKqNzmta07a/tgmUkw8/w==
   dependencies:
     "@grpc/grpc-js" "^1.10.1"
     "@logdna/tail-file" "^2.0.6"
@@ -656,16 +656,16 @@
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
 "@types/node@>=13.7.0":
-  version "26.6.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.3.tgz#411dccb5fc25687c958fe35b6ca3741d48a8d13c"
-  integrity sha512-dsqMQQoeTLqu9wynDD00q573mNzso3IdQOAfHRJqLCcmCFPoGo9A1bDpUcv/9tnKpErQWv9uKeGfl37EIS02Yg==
+  version "26.6.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.4.tgz#5aaac1a7337945f7f9a2de4e0d14e7107157e813"
+  integrity sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==
   dependencies:
     undici-types "~8.9.0"
 
 "@types/node@^24.10.9":
-  version "24.19.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.19.0.tgz#becd0549e091f749520b8db8a446ec1559c88a0b"
-  integrity sha512-zY+5tKxXdhGh1PYI0ac+7juvEu4OI6vWtVVoj5i2m42jxAY1U+zHGt6QCyOFwykdP62sM3MJ9stoYYUw5aCWew==
+  version "24.19.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.19.1.tgz#3a1c3ed9e9fc94fe48d4a72d83dfd0bfcf379c62"
+  integrity sha512-aS3/DG0oM05K0RIXXP+hKjinGG5IgSSVGzswZxW3O0sS3pH4/fycXundUC9XsszgKCk4gHXylTEK6hyFxVxnoQ==
   dependencies:
     undici-types ">=7.24.0 <7.24.7"
 
@@ -1276,9 +1276,9 @@ ini@^6.0.0:
   integrity sha512-IBTdIkzZNOpqm7q3dRqJvMaldXjDHWkEDfrwGEQTs5eaQMWV+djAhR+wahyNNMAa+qpbDUhBMVt4ZKNwpPm7xQ==
 
 ip-address@^10.1.1:
-  version "10.7.2"
-  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.7.2.tgz#5b3b2b7d46c6293861b82dfcd49cc203aa8f2c5c"
-  integrity sha512-7H/2gFSIitxc0hG3nOI1glS8QLo/EHBFFLk8vEUjXY/xu0AdL8jZ9U1IzO2PUm0d2D/ofQcAifb0g6OBkt8U7w==
+  version "10.7.3"
+  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.7.3.tgz#4cb77d274a4e2484a3ea438cfe98dbe0c502e8c5"
+  integrity sha512-A1kdq/tSb5QjvKvAMgIoEvDBIgL7qaqVP/jkvSwYYRZ9iEzvPpopxp2wQfu3SuZRHtpHNxMn8Fs0bS+gf5Xmwg==
 
 is-extglob@^2.1.1:
   version "2.1.1"
