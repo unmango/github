@@ -12,11 +12,11 @@
 		"noImplicitReturns": true,
 		"forceConsistentCasingInFileNames": true
 	},
-	"files": [
-		"components/index.ts",
-		"components/privateRepo.ts",
-		"components/publicRepo.ts",
-		"components/repo.ts",
-		"index.ts"
+	"include": [
+		"**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"bin"
 	]
 }
