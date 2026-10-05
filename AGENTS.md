@@ -4,7 +4,8 @@ This file provides guidance to AI agents when working with code in this reposito
 
 ## Overview
 
-This repository manages GitHub organization infrastructure for "unmango" using Pulumi (TypeScript). It defines repositories, branch protection rulesets, and GitHub settings as code.
+This repository manages source control infrastructure for "unmango" using Pulumi (TypeScript). It defines repositories, branch protection rulesets, and forge settings as code.
+One Pulumi program covers every forge; each forge has its own directory (`github/`) imported from the root `index.ts`.
 
 ## Commands
 
@@ -48,4 +49,4 @@ Uses GitHub App credentials stored in Pulumi config (`Pulumi.prod.yaml`): app ID
 
 ### Stack
 
-Single stack: `UnstoppableMango/unmango-github/prod`
+Single stack: `UnstoppableMango/scm/prod`
