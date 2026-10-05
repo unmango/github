@@ -12,7 +12,7 @@ This repository replaces manual GitHub UI configuration with declarative TypeScr
 
 ## What's managed here
 
-Every public repository under [@unmango](https://github.com/unmango) is defined in [`index.ts`](./index.ts). Each repo gets:
+Every public repository under [@unmango](https://github.com/unmango) is defined in [`github/repos.ts`](./github/repos.ts). Each repo gets:
 
 - **Branch protection** on the default branch (usually `main`): required PRs, stale review dismissal, required status checks, commit signatures, linear history
 - **Consistent merge settings**: squash-only, delete branch on merge, auto-merge enabled
@@ -23,11 +23,14 @@ Private repos use a minimal configuration without branch rulesets.
 ## Structure
 
 ```
-index.ts              # All repos declared here
-components/
-  repo.ts             # Base class: shared defaults for all repos
-  publicRepo.ts       # Adds branch ruleset enforcement
-  privateRepo.ts      # Private visibility, no rulesets
+index.ts                # Entrypoint: imports each forge's program
+github/
+  index.ts              # Organization secrets and stack outputs
+  repos.ts              # All repos declared here
+  components/
+    repo.ts             # Base class: shared defaults for all repos
+    publicRepo.ts       # Adds branch ruleset enforcement
+    privateRepo.ts      # Private visibility, no rulesets
 ```
 
 `PublicRepo` and `PrivateRepo` extend a shared base component. Adding a new repo means instantiating one of these classes with a name, description, and the CI check names that must pass before merging.

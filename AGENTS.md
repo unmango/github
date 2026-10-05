@@ -30,13 +30,17 @@ Repo (abstract base)
 └── PrivateRepo  — private repos, no rulesets
 ```
 
-**`components/repo.ts`** — Base class: sets defaults (squash-only merging, no auto-merge, delete branch on merge, MIT license).
+**`github/components/repo.ts`** — Base class: sets defaults (squash-only merging, no auto-merge, delete branch on merge, MIT license).
 
-**`components/publicRepo.ts`** — Adds a `main` branch ruleset enforcing: required PRs, stale review dismissal, required status checks (mapped to GitHub integration ID `15368`), required signatures, linear history, no fast-forward.
+**`github/components/publicRepo.ts`** — Adds a `main` branch ruleset enforcing: required PRs, stale review dismissal, required status checks (mapped to GitHub integration ID `15368`), required signatures, linear history, no fast-forward.
 
-**`components/privateRepo.ts`** — Minimal: just the base Repo with private visibility.
+**`github/components/privateRepo.ts`** — Minimal: just the base Repo with private visibility.
 
-**`index.ts`** — Instantiates all managed repos as `PublicRepo` or `PrivateRepo` with their specific status check names; exports the list of repo names.
+**`index.ts`** — Entrypoint; re-exports each forge's program, such as `./github`.
+
+**`github/repos.ts`** — Instantiates all managed repos as `PublicRepo` or `PrivateRepo` with their specific status check names, one exported const each.
+
+**`github/index.ts`** — Organization-level resources (Actions secrets) and the `repos` stack output, derived from every export of `repos.ts`.
 
 ### Authentication
 
