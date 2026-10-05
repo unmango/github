@@ -10,8 +10,6 @@ permissions:
   id-token: write
   contents: read
 
-# A new push to a pull request supersedes its older runs. Pushes to main get a
-# group of their own so no deploy is cancelled.
 concurrency:
   group: ${{ github.event_name == 'pull_request' && format('{0}-{1}', github.workflow, github.ref) || github.run_id }}
   cancel-in-progress: true
@@ -19,9 +17,6 @@ concurrency:
 jobs:
   pulumi:
     runs-on: thecluster
-    # Pulumi Cloud fails an update with 409 while another holds the stack's lease.
-    # Every run against prod waits its turn in order, so deploys never collide
-    # and a preview sees state after the deploys queued ahead of it.
     concurrency:
       group: pulumi-prod
       queue: max
