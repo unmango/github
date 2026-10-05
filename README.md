@@ -1,6 +1,6 @@
 # unmango/scm
 
-[![Hercules CI](https://hercules-ci.com/api/v1/site/github/account/unmango/project/github/badge)](https://hercules-ci.com/github/unmango/github)
+[![Hercules CI](https://hercules-ci.com/api/v1/site/github/account/unmango/project/scm/badge)](https://hercules-ci.com/github/unmango/scm)
 
 Source control infrastructure for unmango as code.
 Repositories, branch protection, and settings managed via [Pulumi](https://www.pulumi.com/).
