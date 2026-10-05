@@ -10,12 +10,16 @@ permissions:
   id-token: write
   contents: read
 
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('{0}-{1}', github.workflow, github.ref) || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   pulumi:
     runs-on: thecluster
     concurrency:
-      group: ${{ github.ref }}
-      cancel-in-progress: true
+      group: pulumi-prod
+      queue: max
     steps:
       - name: Checkout
         uses: actions/checkout@v7
