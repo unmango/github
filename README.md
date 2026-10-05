@@ -1,5 +1,7 @@
 # unmango/github
 
+[![Hercules CI](https://hercules-ci.com/api/v1/site/github/account/unmango/project/github/badge)](https://hercules-ci.com/github/unmango/github)
+
 GitHub organization configuration as code. Repositories, branch protection, and settings managed via [Pulumi](https://www.pulumi.com/).
 
 ## What is this?
