@@ -34,6 +34,8 @@ export interface PublicRepoArgs {
 	topics?: Input<Input<string>[]>;
 	/** Passed through to the repository resource, for adopting one that already exists. */
 	repoOptions?: CustomResourceOptions;
+	/** Passed through to the `main` ruleset resource, for adopting one that already exists. */
+	rulesetOptions?: CustomResourceOptions;
 	/** Whether Dependabot raises alerts for the repository. Defaults to enabled. */
 	vulnerabilityAlerts?: Input<boolean>;
 }
@@ -97,7 +99,7 @@ export class PublicRepo extends Repo {
 					requiredStatusChecks: statusChecks,
 				},
 			},
-			{ parent: this },
+			{ parent: this, ...args.rulesetOptions },
 		);
 
 		this.mainRuleset = mainRuleset;
