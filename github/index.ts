@@ -20,4 +20,19 @@ for (const [secretName, plaintextValue] of Object.entries(releaseSigningSecrets)
 	});
 }
 
+// release-please tags provider releases with the release app's token, because a
+// tag pushed with GITHUB_TOKEN does not start the goreleaser workflow.
+new gh.ActionsOrganizationVariable('RELEASE_APP_CLIENT_ID', {
+	variableName: 'RELEASE_APP_CLIENT_ID',
+	value: config.require('releaseAppClientId'),
+	visibility: 'selected',
+	selectedRepositoryIds: providerRepos.map(x => x.repo.repoId),
+});
+new gh.ActionsOrganizationSecret('RELEASE_APP_PRIVATE_KEY', {
+	secretName: 'RELEASE_APP_PRIVATE_KEY',
+	plaintextValue: config.requireSecret('releaseAppPrivateKey'),
+	visibility: 'selected',
+	selectedRepositoryIds: providerRepos.map(x => x.repo.repoId),
+});
+
 export const repos = output(Object.values(allRepos).map(x => x.repo.name)).apply(names => [...names].sort());
