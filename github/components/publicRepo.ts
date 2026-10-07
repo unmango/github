@@ -20,6 +20,13 @@ export interface PublicRepoArgs {
 	 * child resource's URN, which Pulumi would carry out as a delete and recreate.
 	 */
 	repoName?: Input<string>;
+	/**
+	 * Names of the GitHub Actions checks the main ruleset requires. When neither
+	 * this nor requiredChecks is given, the ruleset requires one check named
+	 * `required`: a gate job at the end of the repository's CI that fails when any
+	 * job it needs did, so the repository decides what blocks a merge by editing
+	 * that job's needs. An empty list requires nothing.
+	 */
 	githubChecks?: Input<Input<string>[]>;
 	requiredChecks?: RepositoryRulesetRulesRequiredStatusChecks['requiredChecks'];
 	template?: RepositoryTemplate;
@@ -62,9 +69,9 @@ export class PublicRepo extends Repo {
 
 		const repo = this.repo;
 		const vulnerabilityAlerts = this.vulnerabilityAlerts;
-		const statusChecks = args.githubChecks
-			? getGitHubStatusChecks(args.githubChecks)
-			: getRequiredStatusChecks(args.requiredChecks);
+		const statusChecks = args.requiredChecks
+			? getRequiredStatusChecks(args.requiredChecks)
+			: getGitHubStatusChecks(args.githubChecks ?? defaultGitHubChecks);
 
 		const mainRuleset = new gh.RepositoryRuleset(
 			name,
@@ -103,6 +110,9 @@ export class PublicRepo extends Repo {
 	}
 }
 
+// The check every repository's CI ends in unless it says otherwise.
+const defaultGitHubChecks = ['required'];
+
 function getGitHubStatusChecks(
 	checks: PublicRepoArgs['githubChecks'],
 ): RepositoryRulesetRules['requiredStatusChecks'] {
@@ -123,5 +133,7 @@ function getRequiredStatusChecks(
 ): RepositoryRulesetRules['requiredStatusChecks'] {
 	if (!checks) return;
 
-	return { requiredChecks: checks };
+	// An empty list means no checks are required, which is the absence of the
+	// rule rather than a rule listing nothing.
+	return output(checks).apply(c => c.length > 0 ? { requiredChecks: c } : undefined);
 }
