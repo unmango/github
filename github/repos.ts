@@ -168,6 +168,7 @@ export const strata = new PublicRepo('strata', {
 export const terraform2crd = new PublicRepo('terraform2crd', {
 	description: 'Converts Terraform provider code specs to Custom Resource Definitions (CRDs)',
 	topics: ['terraform', 'crd', 'kubernetes', 'codegen'],
+	githubChecks: [],
 	// Moved from gitlab.com/unmango/terraform/2crd, so the repository already exists.
 	repoOptions: { import: 'terraform2crd' },
 });
