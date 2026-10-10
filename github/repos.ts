@@ -62,6 +62,8 @@ export const enclave = new PublicRepo('enclave', {
 export const game = new PublicRepo('game', {
 	description: 'A gaming framework',
 	githubChecks: ['Build and Test'],
+	// The architecture site, deployed by the repository's pages workflow.
+	pages: { buildType: 'workflow' },
 });
 
 export const go = new PublicRepo('go', {
