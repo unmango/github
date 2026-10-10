@@ -119,6 +119,11 @@ export const nix2git = new PublicRepo('nix2git', {
 	repoOptions: { import: 'nix2git' },
 });
 
+export const notsystemd = new PublicRepo('notsystemd', {
+	description: 'Pod-native stand-in for systemd, for software that expects to run under it',
+	topics: ['systemd', 'kubernetes', 'containers', 'dbus', 'sd-notify', 'go'],
+});
+
 export const palworldOperator = new PublicRepo('palworld-operator', {
 	description: 'Manage Palworld servers in Kubernetes',
 	topics: ['kubernetes', 'operator', 'palworld', 'kubebuilder', 'go'],
