@@ -153,22 +153,10 @@ export const pkgs = new PublicRepo('pkgs', {
 	vulnerabilityAlerts: false,
 });
 
-// Keep the Pulumi resource name as "scm"; repoName holds the current GitHub name until the rename lands.
 export const scm = new PublicRepo('scm', {
-	repoName: 'github',
 	description: 'unmango source control infrastructure',
 	topics: ['pulumi', 'iac', 'github'],
 	githubChecks: ['pulumi'],
-	// This repository already exists. ignoreChanges keeps the import from failing
-	// on settings that differ from the PublicRepo defaults.
-	repoOptions: {
-		import: 'github',
-		ignoreChanges: ['description', 'topics', 'squashMergeCommitTitle'],
-	},
-	rulesetOptions: {
-		import: 'github:1269371',
-		ignoreChanges: ['rules'],
-	},
 });
 
 export const slip = new PublicRepo('slip', {
