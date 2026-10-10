@@ -1,12 +1,14 @@
-# unmango/github
+# unmango/scm
 
 [![Hercules CI](https://hercules-ci.com/api/v1/site/github/account/unmango/project/github/badge)](https://hercules-ci.com/github/unmango/github)
 
-GitHub organization configuration as code. Repositories, branch protection, and settings managed via [Pulumi](https://www.pulumi.com/).
+Source control infrastructure for unmango as code.
+Repositories, branch protection, and settings managed via [Pulumi](https://www.pulumi.com/).
+Each forge has its own directory; GitHub lives under [`github/`](./github).
 
 ## What is this?
 
-This repository replaces manual GitHub UI configuration with declarative TypeScript. Rather than configuring repositories through the GitHub UI, settings are version-controlled, reviewed via pull request, and applied programmatically.
+This repository replaces manual forge UI configuration with declarative TypeScript. Rather than configuring repositories through a web UI, settings are version-controlled, reviewed via pull request, and applied programmatically.
 
 **Pulumi** is an infrastructure-as-code tool that lets you describe infrastructure (GitHub repos, AWS resources, Kubernetes clusters, etc.) using real programming languages instead of domain-specific configuration languages like HCL. It tracks deployed state and computes diffs between desired and actual configuration, the same mental model as `kubectl apply` or `terraform plan/apply`.
 

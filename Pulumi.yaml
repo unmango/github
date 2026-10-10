@@ -1,9 +1,9 @@
-name: unmango-github
+name: scm
 runtime:
   name: nodejs
   options:
     packagemanager: yarn
-description: github.com/unmango IaC
+description: unmango source control infrastructure
 config:
   pulumi:tags:
     value:

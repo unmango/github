@@ -1,5 +1,5 @@
 {
-  description = "unmango's GitHub configuration";
+  description = "unmango's source control infrastructure";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
