@@ -212,3 +212,11 @@ export const theclusterOperator = new PublicRepo('thecluster-operator', {
 	description: 'Smörgåsbord of things a person might want running in their Kubernetes cluster',
 	githubChecks: ['Build and Test', 'Lint', 'Docker'],
 });
+
+export const treespec = new PublicRepo('treespec', {
+	description: 'Syntax tree definitions and generated SDKs, built on unist',
+	topics: ['unist', 'mdast', 'hast', 'ast', 'protobuf', 'tdl', 'codegen'],
+	githubChecks: ['build'],
+	// Transferred from UnstoppableMango/gast, so the repository already exists.
+	repoOptions: { import: 'treespec' },
+});
