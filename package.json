@@ -1,5 +1,5 @@
 {
-	"name": "scm",
+	"name": "unmango-scm",
 	"private": true,
 	"license": "MIT",
 	"packageManager": "yarn@1.22.22",

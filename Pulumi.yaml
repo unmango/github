@@ -1,4 +1,4 @@
-name: scm
+name: unmango-scm
 runtime:
   name: nodejs
   options:

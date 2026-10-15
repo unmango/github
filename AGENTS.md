@@ -49,4 +49,4 @@ Uses GitHub App credentials stored in Pulumi config (`Pulumi.prod.yaml`): app ID
 
 ### Stack
 
-Single stack: `UnstoppableMango/scm/prod`
+Single stack: `UnstoppableMango/unmango-scm/prod`
