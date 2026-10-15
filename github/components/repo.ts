@@ -41,7 +41,12 @@ export abstract class Repo extends ComponentResource {
 		const vulnerabilityAlerts = new gh.RepositoryVulnerabilityAlerts(name, {
 			repository: repo.name,
 			enabled: args.vulnerabilityAlerts,
-		}, { parent: this });
+		}, {
+			parent: this,
+			// Renaming the repository replaces this resource. Created first, the old
+			// one's delete would disable alerts again through GitHub's rename redirect.
+			deleteBeforeReplace: true,
+		});
 
 		this.repo = repo;
 		this.vulnerabilityAlerts = vulnerabilityAlerts;
